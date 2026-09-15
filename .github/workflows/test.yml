@@ -42,4 +42,4 @@ jobs:
           pip install hatch
 
       - name: Run test
-        run: hatch run test
+        run: hatch test
