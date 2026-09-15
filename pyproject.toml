@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "earth-python-demo"
+dynamic = ["version"]
+description = 'Template for Python Package'
+readme = "README.md"
+requires-python = ">=3.13"
+license = "AGPL-3.0-or-later"
+keywords = []
+authors = [
+  { name = "KIT Environmental Circle, \"Earth\"", email = "kit.earth.sample.cal@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo#readme"
+Issues = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo/issues"
+Source = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo"
+
+[tool.hatch.version]
+path = "src/earth_python_demo/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/earth_python_demo tests}"
+
+[tool.coverage.run]
+source_pkgs = ["earth_python_demo", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/earth_python_demo/__about__.py",
+]
+
+[tool.coverage.paths]
+earth_python_demo = ["src/earth_python_demo", "*/earth-python-demo/src/earth_python_demo"]
+tests = ["tests", "*/earth-python-demo/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

@@ -1,0 +1,45 @@
+name: Test Python package with Hatch
+on:
+  push:
+    paths:
+      - pyproject.toml
+      - src/**
+      - tests/**
+      - .github/workflows/test.yml
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test with hatch
+
+    strategy:
+      matrix:
+        platform: [windows-latest, macos-latest, ubuntu-latest]
+        python-version: ["3.13", "3.14"]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Check out the Repo
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install hatch
+        run: |
+          python -m pip install --upgrade pip
+          pip install hatch
+
+      - name: Run test
+        run: hatch run test
