@@ -1,17 +1,17 @@
 # Repository Name
 
-![PyPI License](https://img.shields.io/pypi/l/:packageName)
-![PyPI Version](https://img.shields.io/pypi/v/:packageName)
-![PyPI Implementation](https://img.shields.io/pypi/implementation/:packageName)
-![PyPI Python Version](https://img.shields.io/pypi/pyversions/:packageName)
+![PyPI License](https://img.shields.io/pypi/l/meeting-record-python-earth)
+![PyPI Version](https://img.shields.io/pypi/v/meeting-record-python-earth)
+![PyPI Implementation](https://img.shields.io/pypi/implementation/meeting-record-python-earth)
+![PyPI Python Version](https://img.shields.io/pypi/pyversions/meeting-record-python-earth)
 
-Welcome to <!--Python Package name-->!
+Welcome to `meeting-record-python-earth`!
 
 This package is ...
 
 ## Documentation
 
-The documentations of this repository is on <!--link to docs-->. Please see this for details.
+The documentations of this repository is on <https://kit-environmental-circle-earth.github.io/meeting-record-python-earth>. Please see this for details.
 
 ## License
 

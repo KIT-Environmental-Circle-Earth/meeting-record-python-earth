@@ -1,11 +1,11 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.31"]
 build-backend = "hatchling.build"
 
 [project]
-name = "earth-python-demo"
+name = "meeting-record-python-earth"
 dynamic = ["version"]
-description = 'Template for Python Package'
+description = 'Meeting AI recorder.'
 readme = "README.md"
 requires-python = ">=3.13"
 license = "AGPL-3.0-or-later"
@@ -20,34 +20,46 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-dependencies = []
+dependencies = [
+  "google-genai>=2.23",
+  "sounddevice>=0.5.6",
+  "numpy>=2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "Sphinx>=9.1",
+  "pydata-sphinx-theme>=0.21",
+  "numpydoc>=1.10",
+  "pytest>=9.1",
+]
 
 [project.urls]
-Documentation = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo#readme"
-Issues = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo/issues"
-Source = "https://github.com/KIT-Environmental-Circle-Earth/earth-python-demo"
+Documentation = "https://github.com/KIT-Environmental-Circle-Earth/meeting-record-python-earth#readme"
+Issues = "https://github.com/KIT-Environmental-Circle-Earth/meeting-record-python-earth/issues"
+Source = "https://github.com/KIT-Environmental-Circle-Earth/meeting-record-python-earth"
 
 [tool.hatch.version]
-path = "src/earth_python_demo/__about__.py"
+path = "src/meeting_record_python_earth/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/earth_python_demo tests}"
+check = "mypy --install-types --non-interactive {args:src/meeting_record_python_earth tests}"
 
 [tool.coverage.run]
-source_pkgs = ["earth_python_demo", "tests"]
+source_pkgs = ["meeting_record_python_earth", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/earth_python_demo/__about__.py",
+  "src/meeting_record_python_earth/__about__.py",
 ]
 
 [tool.coverage.paths]
-earth_python_demo = ["src/earth_python_demo", "*/earth-python-demo/src/earth_python_demo"]
-tests = ["tests", "*/earth-python-demo/tests"]
+meeting_record_python_earth = ["src/meeting_record_python_earth", "*/meeting_record_python_earth/src/meeting_record_python_earth"]
+tests = ["tests", "*/meeting_record_python_earth/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
