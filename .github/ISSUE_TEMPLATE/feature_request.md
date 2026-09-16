@@ -4,6 +4,7 @@ about: Request for a Feature
 title: "[REQUEST] "
 labels: enhancement
 assignees: ''
+type: Feature
 
 ---
 
