@@ -2,9 +2,12 @@
 name: Reporting a Bug
 about: Create a report of a bug
 title: "[BUG] "
-labels: bug
+labels: bug, enhancement
+assignees: ''
+type: Bug
 
 ---
+
 **The Behaviors**
 Please tell us the behavior concisely.
 

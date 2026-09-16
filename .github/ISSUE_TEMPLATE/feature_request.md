@@ -1,10 +1,12 @@
 ---
 name: Feature Request
 about: Request for a Feature
-labels: enhancement
 title: "[REQUEST] "
+labels: enhancement
+assignees: ''
 
 ---
+
 **The Problem**
 The related problem you want to solve with the feature.
 
