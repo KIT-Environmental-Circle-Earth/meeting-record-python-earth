@@ -8,7 +8,13 @@ mcp = FastMCP('Super MCP Server')
 
 @mcp.resource('vocabulary')
 def vocabulary() -> list[str]:
-    """Returns the special vocablary for recording."""
+    """Returns the special vocablary for recording.
+
+    Returns
+    -------
+    vocab : list[str]
+        The vocabulary word list.
+    """
     return [
         'あーす',
         '京都工芸繊維大学',
